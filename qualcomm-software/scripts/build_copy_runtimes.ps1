@@ -21,8 +21,8 @@ Set-VS-Env
 $repoRoot = git -C $PSScriptRoot rev-parse --show-toplevel
 $buildDir = (Join-Path $repoRoot build)
 
-$env:CC = 'clang-cl'
-$env:CXX = 'clang-cl'
+$env:CC = 'clang-cl-19'
+$env:CXX = 'clang-cl-19'
 
 mkdir $buildDir -Force
 cd $buildDir
