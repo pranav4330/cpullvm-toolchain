@@ -1,0 +1,11 @@
+sudo apt-get update
+# Install swig and libedit-dev used by lldb and
+# libc++-dev required for eld tests
+sudo apt-get install -y swig libedit-dev clang-22 libc++-22-dev
+
+# Set default clang version to clang-22 (priority 200 > clang-19's 100)
+sudo update-alternatives --install /usr/bin/clang clang /usr/lib/llvm-22/bin/clang 200
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/lib/llvm-22/bin/clang++ 200
+
+# Install meson. eld support was added in v1.9.0, so we need at least that.
+pip install meson==1.10.0
